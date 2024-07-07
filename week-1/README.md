@@ -19,6 +19,8 @@
 - https://leetcode.com/problems/valid-anagram
 - https://leetcode.com/problems/top-k-frequent-elements
 - https://leetcode.com/problems/product-of-array-except-self
+
+Optional:
 - https://leetcode.com/problems/group-anagrams
 - https://leetcode.com/problems/merge-sorted-array
 - https://leetcode.com/problems/pascals-triangle (try recurrency)
