@@ -24,6 +24,7 @@ class List {
 // 3. Write the time and space complexity of each method. (optional)
 
 // Notes:
+// - You can use the Array constructor to define the array of a specific size.
 // - Restrict the solution to work on the primitive types.
 // - Pay attention to edge cases, such as clearing an empty list, removing a non-existent element, modifying an element at a non-existent index, etc.
 // - Do not use any array functions; instead, create a new array with a different size, and search/count elements using loops.
