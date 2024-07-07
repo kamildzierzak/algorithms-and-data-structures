@@ -9,13 +9,7 @@ class List {
   clear() {} // remove all elements
   contains(element) {} // check if element is in the list
   reverse() {} // reverse the list
-  [Symbol.iterator]() {}
-  // iterator returns an object { next: () => ({ value: any, done: boolean }) }
-  // next is a function that returns an object { value: any, done: boolean }.
-  // value is the current element, and after returning it, the index should be incremented.
-  // if there is an element at the current index, done = false, otherwise done = true.
-  // variables defined in the iterator won't be reinitialized and can have their values changed within the next function.
-  // you can test it using a for...of loop.
+  [Symbol.iterator]() {} // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol
 }
 
 // Tasks:
