@@ -1,6 +1,7 @@
 # Week 1
 
 ### Proposed steps to solve any problem
+
 - Before writing code, let's thoroughly understand the problem and determine what needs to be done.
 - Consider potential solutions and use pseudocode to jot down thoughts, helping to relieve our brain from excessive thinking.
 - Write the code and verify the solution in your mind, going through each line step-by-step to ensure the code will work correctly and you understand its behavior perfectly.
