@@ -13,7 +13,7 @@
 - https://leetcode.com/problems/contains-duplicate
 - https://leetcode.com/problems/single-number
 - https://leetcode.com/problems/two-sum
-- https://leetcode.com/problems/search-insert-position
+- https://leetcode.com/problems/search-insert-position (optional: google binary search)
 - https://leetcode.com/problems/remove-element
 - https://leetcode.com/problems/best-time-to-buy-and-sell-stock
 - https://leetcode.com/problems/valid-anagram
