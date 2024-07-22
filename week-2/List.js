@@ -1,16 +1,59 @@
 class List {
-  constructor() {} // initialize empty list
-  add(element) {} // add element to the end of the list
-  insert(element, index) {} // insert element at index
+  #elements;
+  #currentSize;
+  #maximumSize;
+
+  // initialize empty list with maximum size of x || 2
+  constructor(maximumSize) {
+    this.#currentSize = 0;
+    this.#maximumSize = maximumSize || 2;
+    this.#elements = new Array(this.#currentSize);
+  }
+
+  // add element to the end of the list
+  add(element) {
+    if (this.#currentSize === this.#maximumSize) {
+      this.resize();
+    }
+
+    this.#elements[this.#currentSize] = element;
+    this.#currentSize++;
+  }
+
+  // insert element at index
+  insert(element, index) {}
+
   removeAt(index) {} // remove element at index
   get(index) {} // get element at index
   set(element, index) {} // set element at index
-  get size() {} // get number of elements
+
+  // get number of elements
+  get size() {
+    return this.#elements.length;
+  }
+
   clear() {} // remove all elements
   contains(element) {} // check if element is in the list
   reverse() {} // reverse the list
   [Symbol.iterator]() {} // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol
+
+  get elements() {
+    return this.#elements;
+  }
+
+  resize() {
+    this.#maximumSize = this.#maximumSize * 2;
+    const newList = new Array(this.#maximumSize);
+
+    for (let i = 0; i < this.#elements.length; i++) {
+      newList[i] = this.#elements[i];
+    }
+
+    this.#elements = newList;
+  }
 }
+
+export default List;
 
 // Tasks:
 // Implement the List class according to the above interface.
