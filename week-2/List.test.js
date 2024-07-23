@@ -75,6 +75,7 @@ describe("List", () => {
     list.add(3);
     list.clear();
     expect(list.elements).toEqual([]);
+    expect(list.size).toEqual(0);
   });
 
   test("should be able to check if list contains element", () => {

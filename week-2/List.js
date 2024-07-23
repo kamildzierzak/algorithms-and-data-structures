@@ -22,11 +22,11 @@ class List {
 
   // insert element at index
   insert(element, index) {
-    if (index < 0 || index >= this.#currentSize) {
+    if (index < 0 || index > this.#currentSize) {
       throw new Error("Index out of bounds.");
     }
 
-    if (this.#currentSize + 1 === this.#maximumSize) {
+    if (this.#currentSize + 1 > this.#maximumSize) {
       this.resize();
     }
 
@@ -47,6 +47,7 @@ class List {
   }
 
   // remove element at index
+  // ? better to remove element and shift all elements to the left
   removeAt(index) {
     if (index < 0 || index >= this.#currentSize) {
       throw new Error("Index out of bounds.");
@@ -75,12 +76,14 @@ class List {
 
   // get number of elements
   get size() {
-    return this.#elements.length;
+    return this.#currentSize;
   }
 
   // remove all elements
   clear() {
-    const newList = new Array(this.#maximumSize);
+    const newList = new Array();
+    this.#currentSize = 0;
+    this.#maximumSize = 2;
     this.#elements = newList;
   }
 
@@ -106,13 +109,15 @@ class List {
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol
+  // ? iterate only over elements that are not undefined
   [Symbol.iterator]() {
     let index = 0;
     const elements = this.#elements;
+    const size = this.#currentSize;
 
     return {
       next() {
-        if (index < elements.length) {
+        if (index < size) {
           return { value: elements[index++], done: false };
         } else {
           return { value: undefined, done: true };
@@ -129,7 +134,7 @@ class List {
     this.#maximumSize = this.#maximumSize * 2;
     const newList = new Array(this.#maximumSize);
 
-    for (let i = 0; i < this.#elements.length; i++) {
+    for (let i = 0; i < this.#currentSize; i++) {
       newList[i] = this.#elements[i];
     }
 
