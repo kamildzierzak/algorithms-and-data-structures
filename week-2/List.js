@@ -21,14 +21,43 @@ class List {
   }
 
   // insert element at index
-  insert(element, index) {}
+  insert(element, index) {
+    if (index < 0 || index >= this.#currentSize) {
+      throw new Error("Index out of bounds.");
+    }
+
+    if (this.#currentSize + 1 === this.#maximumSize) {
+      this.resize();
+    }
+
+    const newList = new Array(this.#maximumSize);
+
+    for (let i = 0; i < index; i++) {
+      newList[i] = this.#elements[i];
+    }
+
+    newList[index] = element;
+
+    for (let j = index + 1; j < this.#currentSize + 1; j++) {
+      newList[j] = this.#elements[j - 1];
+    }
+
+    this.#elements = newList;
+    this.#currentSize++;
+  }
 
   // remove element at index
-  removeAt(index) {}
+  removeAt(index) {
+    if (index < 0 || index >= this.#currentSize) {
+      throw new Error("Index out of bounds.");
+    }
+
+    this.#elements[index] = undefined;
+  }
 
   // get element at index
   get(index) {
-    if (index < 0 || index >= this.#maximumSize) {
+    if (index < 0 || index >= this.#currentSize) {
       throw new Error("Index out of bounds.");
     }
 
@@ -37,7 +66,7 @@ class List {
 
   // set element at index
   set(element, index) {
-    if (index < 0 || index >= this.#maximumSize) {
+    if (index < 0 || index >= this.#currentSize) {
       throw new Error("Index out of bounds.");
     }
 
@@ -65,9 +94,32 @@ class List {
     return false;
   }
 
-  reverse() {} // reverse the list
+  // reverse the list
+  reverse() {
+    const newList = new Array(this.#maximumSize);
 
-  [Symbol.iterator]() {} // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol
+    for (let i = 0; i < this.#currentSize; i++) {
+      newList[i] = this.#elements[this.#currentSize - 1 - i];
+    }
+
+    this.#elements = newList;
+  }
+
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol
+  [Symbol.iterator]() {
+    let index = 0;
+    const elements = this.#elements;
+
+    return {
+      next() {
+        if (index < elements.length) {
+          return { value: elements[index++], done: false };
+        } else {
+          return { value: undefined, done: true };
+        }
+      },
+    };
+  }
 
   get elements() {
     return this.#elements;
