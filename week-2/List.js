@@ -23,18 +23,50 @@ class List {
   // insert element at index
   insert(element, index) {}
 
-  removeAt(index) {} // remove element at index
-  get(index) {} // get element at index
-  set(element, index) {} // set element at index
+  // remove element at index
+  removeAt(index) {}
+
+  // get element at index
+  get(index) {
+    if (index < 0 || index >= this.#maximumSize) {
+      throw new Error("Index out of bounds.");
+    }
+
+    return this.#elements[index];
+  }
+
+  // set element at index
+  set(element, index) {
+    if (index < 0 || index >= this.#maximumSize) {
+      throw new Error("Index out of bounds.");
+    }
+
+    this.#elements[index] = element;
+  }
 
   // get number of elements
   get size() {
     return this.#elements.length;
   }
 
-  clear() {} // remove all elements
-  contains(element) {} // check if element is in the list
+  // remove all elements
+  clear() {
+    const newList = new Array(this.#maximumSize);
+    this.#elements = newList;
+  }
+
+  // check if element is in the list
+  contains(element) {
+    for (let i = 0; i < this.#currentSize; i++) {
+      if (element === this.#elements[i]) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   reverse() {} // reverse the list
+
   [Symbol.iterator]() {} // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol
 
   get elements() {
