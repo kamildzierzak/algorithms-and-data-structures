@@ -1,7 +1,10 @@
 let plusOne = function (digits) {
+  // O(1)
   let acc = 0;
 
+  // O(n)
   for (let i = digits.length - 1; i >= 0; i--) {
+    // O(1)
     if (digits[i] < 9) {
       digits[i]++;
       break;
@@ -14,9 +17,12 @@ let plusOne = function (digits) {
     }
   }
 
+  // O(n)
   if (digits[0] === 0) {
     return [acc, ...digits];
   }
 
   return digits;
 };
+
+// Worse time complexity: O(n)

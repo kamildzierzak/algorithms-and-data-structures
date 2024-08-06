@@ -1,7 +1,7 @@
 {
   "name": "week-2",
   "version": "1.0.0",
-  "description": "### List of exercises",
+  "description": "week-2",
   "main": "List.js",
   "type": "module",
   "scripts": {
