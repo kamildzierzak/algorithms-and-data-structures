@@ -5,4 +5,4 @@ function swap(array, index1, index2) {
   array[index2] = keeper;
 }
 
-module.exports = swap;
+export default swap;
