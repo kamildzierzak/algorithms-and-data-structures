@@ -1,4 +1,4 @@
-# Week 1
+# Week 1 - Arrays
 
 ### Proposed steps to solve any problem
 
@@ -22,6 +22,9 @@
 - https://leetcode.com/problems/product-of-array-except-self
 
 Optional:
+
 - https://leetcode.com/problems/group-anagrams
 - https://leetcode.com/problems/merge-sorted-array
 - https://leetcode.com/problems/pascals-triangle (try recurrency)
+- https://leetcode.com/problems/longest-consecutive-sequence/
+- https://leetcode.com/problems/valid-sudoku/
