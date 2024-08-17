@@ -1,3 +1,5 @@
+// Worse time complexity: O(n)
+// Space complexity: O(1)
 // XOR way
 let singleNumber = nums => {
   let theChoosenOne = nums[0];
@@ -10,6 +12,7 @@ let singleNumber = nums => {
   return theChoosenOne;
 };
 
+// // Worse time complexity: O(n log n)
 // let singleNumber = function (nums) {
 //   // O(n log n)
 //   nums.sort((x, y) => x - y);
@@ -22,5 +25,3 @@ let singleNumber = nums => {
 //     }
 //   }
 // };
-
-// // Worse time complexity: O(n log n)
