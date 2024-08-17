@@ -1,4 +1,4 @@
-# Week 2
+# Week 2 - Time and Space Complexity, Lists
 
 ### List of exercises
 
