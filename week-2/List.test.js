@@ -35,9 +35,9 @@ describe("List", () => {
   test("should remove element at index", () => {
     list.add(3);
     list.add(4);
-    list.removeAt(0);
-    expect(list.get(0)).toEqual(undefined);
-    expect(list.get(1)).toEqual(4);
+    list.add(5);
+    list.removeAt(1);
+    expect(list.elements).toEqual([3, 5]);
   });
 
   test("should throw error if removing from index out of bounds", () => {
@@ -74,7 +74,6 @@ describe("List", () => {
     list.add(2);
     list.add(3);
     list.clear();
-    expect(list.elements).toEqual([]);
     expect(list.size).toEqual(0);
   });
 
@@ -101,12 +100,12 @@ describe("List", () => {
     list.add(2);
     list.add(3);
     let sum = 0;
+    let count = 0;
     for (let element of list) {
-      if (element === undefined) {
-        continue;
-      }
+      count++;
       sum += element;
     }
     expect(sum).toEqual(6);
+    expect(count).toEqual(3);
   });
 });

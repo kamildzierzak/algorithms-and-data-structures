@@ -7,13 +7,13 @@ class List {
   constructor(maximumSize) {
     this.#currentSize = 0;
     this.#maximumSize = maximumSize || 2;
-    this.#elements = new Array(this.#currentSize);
+    this.#elements = new Array(this.#maximumSize);
   }
 
   // add element to the end of the list
   add(element) {
     if (this.#currentSize === this.#maximumSize) {
-      this.resize();
+      this.expandCapacity();
     }
 
     this.#elements[this.#currentSize] = element;
@@ -26,8 +26,8 @@ class List {
       throw new Error("Index out of bounds.");
     }
 
-    if (this.#currentSize + 1 > this.#maximumSize) {
-      this.resize();
+    if (this.#currentSize === this.#maximumSize) {
+      this.expandCapacity();
     }
 
     const newList = new Array(this.#maximumSize);
@@ -53,7 +53,12 @@ class List {
       throw new Error("Index out of bounds.");
     }
 
-    this.#elements[index] = undefined;
+    for (let i = index; i < this.#currentSize - 1; i++) {
+      this.#elements[i] = this.#elements[i + 1];
+    }
+
+    this.#currentSize--;
+    this.#elements[this.#currentSize] = undefined; // to clear last element
   }
 
   // get element at index
@@ -81,10 +86,7 @@ class List {
 
   // remove all elements
   clear() {
-    const newList = new Array();
     this.#currentSize = 0;
-    this.#maximumSize = 2;
-    this.#elements = newList;
   }
 
   // check if element is in the list
@@ -109,7 +111,7 @@ class List {
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterator_protocol
-  // ? iterate only over elements that are not undefined
+  // Symbol.iterator is a built-in symbol in JavaScript that defines the default iterator for an object. An object that implements the Symbol.iterator method is considered "iterable." This means it can be used in constructs like for...of loops, the spread operator (...), and other contexts that expect an iterable, such as Array.from().
   [Symbol.iterator]() {
     let index = 0;
     const elements = this.#elements;
@@ -130,7 +132,7 @@ class List {
     return this.#elements;
   }
 
-  resize() {
+  expandCapacity() {
     this.#maximumSize = this.#maximumSize * 2;
     const newList = new Array(this.#maximumSize);
 
