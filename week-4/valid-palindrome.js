@@ -1,3 +1,7 @@
+// Best time complexity: Ω(n)  (Even in the best case, the string needs to be processed, which takes O(n) time)
+// Average time complexity: Θ(n)
+// Worse time complexity: O(n)
+// Space complexity: O(n)
 const isPalindrome = s => {
   // remove non-alphanumeric characters
   // convert to lowercase
