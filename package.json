@@ -1,8 +1,8 @@
 {
-  "name": "week-2",
+  "name": "algorithms-and-data-structures",
+  "description": "practicing alg and ds",
   "version": "1.0.0",
-  "description": "week-2",
-  "main": "List.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
