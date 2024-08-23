@@ -1,3 +1,7 @@
+// Best time complexity: Ω(n)
+// Average time complexity: Θ(n)
+// Worse time complexity: O(n)
+// Space complexity: O(1)
 const maxArea = array => {
   let leftPointer = 0;
   let rightPointer = array.length - 1;

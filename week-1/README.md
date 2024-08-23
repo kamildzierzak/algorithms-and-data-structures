@@ -23,7 +23,7 @@
 
 Optional:
 
-- [ ] https://leetcode.com/problems/group-anagrams
+- [x] https://leetcode.com/problems/group-anagrams
 - [x] https://leetcode.com/problems/merge-sorted-array
 - [x] https://leetcode.com/problems/pascals-triangle (try recurrency)
 - [] https://leetcode.com/problems/longest-consecutive-sequence/
