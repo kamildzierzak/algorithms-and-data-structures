@@ -1,4 +1,4 @@
-import swap from "./swap.js";
+import { swap } from "../utils.js";
 
 // Best time complexity: Ω(n^2)
 // Average time complexity: Θ(n^2)

@@ -1,5 +1,3 @@
-import swap from "./swap.js";
-
 // Best time complexity: Ω(n)
 // Average time complexity: Θ(n^2)
 // Worse time complexity: O(n^2)
