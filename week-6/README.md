@@ -13,11 +13,26 @@
 - [x] https://leetcode.com/problems/min-stack/
 - [x] https://leetcode.com/problems/evaluate-reverse-polish-notation/
 - [x] https://leetcode.com/problems/generate-parentheses/
-- [] https://leetcode.com/problems/daily-temperatures/
-- [] https://leetcode.com/problems/car-fleet/
+- [x] https://leetcode.com/problems/daily-temperatures/
+- [x] https://leetcode.com/problems/car-fleet/
 - [] https://leetcode.com/problems/largest-rectangle-in-histogram/
 
 ### More exercises
 
 - https://leetcode.com/tag/queue/
 - https://leetcode.com/tag/stack/
+
+<!-- Also, here is guide for a better and easier game experience, especially helpful on your wrists:
+
+Go into Settings -> Gameplay -> Controls
+Make sure to checkmark the following:
+Queue Skills
+Auto-Move within Range to Attack Target
+Auto-Move within Range to Use Beneficial Skills
+Auto-Use Non-targeted Beneficial Skills on Self
+Toggle Basic Attack
+Toggle Charge Skills
+Toggle Aimed Skills
+
+Go into Gameplay -> Target
+Auto Target Nearest Enemy when Attacking without a Target -->
